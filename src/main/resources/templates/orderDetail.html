@@ -1,0 +1,16 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1>Order Detail</h1>
+<p><strong>Customer Name:</strong> <span th:text="${order.customerName}"></span></p>
+<p><strong>Products:</strong> <span th:each="product : ${order.productNames}" th:text="${product} + ' '"></span></p>
+<p><strong>Total Price:</strong> <span th:text="${order.totalPrice}"></span> KRW</p>
+<a th:href="@{/createPayment(orderId=${order.orderId})}">Proceed to Payment</a>
+</body>
+</html>

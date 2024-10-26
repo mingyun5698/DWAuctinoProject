@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/card/{id}(id=${user.id})}" method="post">
+    <input type="hidden" name="id" th:value="${user.id}" />
+    <input type="text" name="cardnumber"  />
+    <input type="text" name="password"  />
+    <button type="submit">card create</button>
+</form>
+</body>
+</html>

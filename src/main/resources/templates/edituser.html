@@ -1,0 +1,46 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<form th:action="@{/user/edit}" method="post">
+    <input type="hidden" th:name="id" th:value="${user.id}">
+
+    <div>userId</div>
+    <input type="text" id="userId" name="UserId"
+           th:value="${user.userId}">
+    <div>password</div>
+    <input type="text" id="password" name="password"
+           th:value="${user.password}">
+    <div>usertype</div>
+    <input type="text" id="usertype" name="usertype"
+           th:value="${user.usertype}">
+    <div>birthdate</div>
+    <input type="text" id="birthdate" name="birthdate"
+           th:value="${user.birthdate}">
+    <div>gender</div>
+    <input type="text" id="gender" name="gender"
+           th:value="${user.gender}">
+    <div>email</div>
+    <input type="text" id="email" name="email"
+           th:value="${user.email}">
+    <div>contact</div>
+    <input type="text" id="contact" name="contact"
+           th:value="${user.contact}">
+    <div>address</div>
+    <input type="text" id="address" name="address"
+           th:value="${user.address}">
+
+
+
+
+    <input type="submit" value="직원 수정">
+</form>
+
+
+</body>
+</html>

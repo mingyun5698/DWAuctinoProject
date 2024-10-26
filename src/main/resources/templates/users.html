@@ -1,0 +1,60 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div>
+    <button id="add" onclick="location.href='/adduser'">직원추가</button>
+    <table>
+        <thead>
+        <tr><th>id</th>
+            <th>userId</th>
+            <th>password</th>
+            <th>usertype</th>
+            <th>birthdate</th>
+            <th>gender</th>
+            <th>email</th>
+            <th>contact</th>
+            <th>address</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Iterate through dinosaurs and display information -->
+        <tr th:each="user : ${users}">
+            <td th:text="${user.id}"></td> <!-- ID 출력 -->
+            <td th:text="${user.userId}"></td>
+            <td th:text="${user.password}"></td>
+            <td th:text="${user.usertype}"></td>
+            <td th:text="${user.birthdate}"></td>
+            <td th:text="${user.gender}"></td>
+            <td th:text="${user.email}"></td>
+            <td th:text="${user.contact}"></td>
+            <td th:text="${user.address}"></td>
+
+            <td>
+                <!-- Edit 버튼 -->
+                <a th:href="@{/user/edit/{id}(id=${user.id})}">
+                    <button>수정</button>
+                </a>
+
+
+                <!-- Delete 버튼 -->
+                <form th:action="@{/users/delete}" method="post">
+                    <input type="hidden" name="id" th:value="${user.id}" />
+                    <button type="submit">Delete</button>
+                </form>
+
+                <a th:href="@{/user/card/{id}(id=${user.id})}">
+                    <button>수정</button>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
